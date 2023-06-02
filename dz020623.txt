@@ -1,0 +1,90 @@
+Билет 5.
+class BankAccount:
+    def __init__(self, account_number, balance):
+        self.account_number = account_number
+        self.balance = balance
+        
+    def deposit(self):
+        pass
+    
+    def withdraw(self):
+        pass
+    
+class SavingAccount(BankAccount):
+    def __init__(self, account_number, balance):
+        super().__init__(account_number, balance)
+        
+    def deposit(self):
+        print(f"Средства с счета {self.account_number} сняты")
+
+class CheckingAccount(BankAccount):
+    def __init__(self, account_number, balance):
+        super().__init__(account_number, balance)
+            
+    def withdraw(self):
+        print(f"Средства на счет {self.account_number} внесены")
+        
+
+m = SavingAccount(1111, 300)
+
+m.deposit()
+
+Билет 6.
+class Book:
+    def __init__(self, title, author, year):
+        self.title = title
+        self.author = author
+        self.year = year
+    
+    def get_info(self):
+        pass
+    
+class Novel(Book):
+    def __init__(self, title, author, year):
+        super().__init__(title, author, year)
+        
+    def get_info(self):
+        print(f"Книга {self. title} автора {self.author} написана в жанре ноовелла. Новелла (от итал. novella — новость) — малый эпический жанр, написанный в прозе. ")
+    
+class Poetry(Book):
+    def __init__(self, title, author, year):
+        super().__init__(title, author, year)
+        
+    def get_info(self):
+        print(f"Книга {self.title} автора {self.author} написана в жанре поэзия. Поэзия (греч. poiesis, от poieo — творю, создаю) — наряду с прозой один из двух основных способов организации художественной речи.")
+        
+
+b1 = Novel('Последний лист' , 'О. Генри', 1907)
+b2 = Poetry('Парус', 'М.Ю. Лермонтов', 1832)
+
+b1.get_info()
+b2.get_info()
+
+Билет 7.
+class Product():
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
+        
+    def get_info(self):
+        pass
+    
+class Food(Product):
+    def __init__(self, name, price):
+        super().__init__(name, price)
+        
+    def get_info(self):
+        print(f"Товар {self.name} стоит {self.price} и относится к категории еда.")
+    
+class Electronics(Product):
+    def __init__(self, name, price):
+        super().__init__(name, price)
+        
+    def get_info(self):
+        print(f"Товар {self.name} стоит {self.price} и относится к категории электроника.")
+        
+p1 = Food('Яблоко', '90р')
+p2 = Electronics('Телевизор', '35 000р')
+
+p1.get_info()
+p2.get_info()
